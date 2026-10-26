@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { supabase } from "@/lib/supabase";
+import Policy from "@/components/policy";
 import { statusLabels } from "@/lib/presentation";
 type B = {
   id: string;
@@ -9,6 +10,8 @@ type B = {
   price_mzn: number;
   status: string;
   refund_due: boolean;
+  expires_at: string;
+  payments: { validation_status: string }[];
   services: { name: string } | null;
   professionals: { display_name: string } | null;
 };
@@ -25,7 +28,7 @@ export default function MinhasMarcacoes() {
     const { data, error } = await supabase()
       .from("bookings")
       .select(
-        "id,starts_at,price_mzn,status,refund_due,services(name),professionals(display_name)",
+        "id,starts_at,price_mzn,status,refund_due,expires_at,payments(validation_status),services(name),professionals(display_name)",
       )
       .eq("customer_id", user.id)
       .order("starts_at", { ascending: false });
@@ -49,6 +52,7 @@ export default function MinhasMarcacoes() {
   }
   return (
     <>
+      <Policy />
       <div className="pagehead">
         <div className="eyebrow">Clientes</div>
         <h1>Minhas marcações</h1>
@@ -94,12 +98,23 @@ export default function MinhasMarcacoes() {
                 </p>
               </div>
               <span className={`pill status-${b.status}`}>
-                {statusLabels[b.status] || b.status}
+                {statusLabels[
+                  b.status === "pending_payment"
+                    ? new Date(b.expires_at) <= new Date()
+                      ? "expired"
+                      : b.payments.some(
+                            (p) => p.validation_status === "pending",
+                          )
+                        ? "payment_review"
+                        : b.status
+                    : b.status
+                ] || b.status}
               </span>
             </div>
             {b.refund_due && (
               <p className="notice">
-                Reembolso elegível: aguarda processamento manual.
+                Reembolso sinalizado anteriormente: contacte a gerência para
+                confirmar o tratamento.
               </p>
             )}
             {["pending_payment", "confirmed"].includes(b.status) && (

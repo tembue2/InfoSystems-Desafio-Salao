@@ -4,7 +4,8 @@ export const statusLabels: Record<string, string> = {
   completed: "Concluída",
   cancelled: "Cancelada",
   expired: "Expirada",
-  no_show: "Não compareceu",
+  in_progress: "Em atendimento",
+  payment_review: "Pagamento em verificação",
 };
 export const roleLabels: Record<string, string> = {
   manager: "Gerente",
