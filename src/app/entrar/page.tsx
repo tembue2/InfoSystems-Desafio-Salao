@@ -30,7 +30,17 @@ export default function Entrar() {
           password,
         });
         if (error) throw error;
-        window.location.href = "/reservar";
+        const {
+          data: { user },
+        } = await supabase().auth.getUser();
+        const { data: profile, error: profileError } = await supabase()
+          .from("profiles")
+          .select("role")
+          .eq("id", user!.id)
+          .single();
+        if (profileError) throw profileError;
+        window.location.href =
+          profile.role === "customer" ? "/reservar" : "/admin";
       }
     } catch (e) {
       setMessage((e as Error).message);
@@ -56,6 +66,7 @@ export default function Entrar() {
           <p>Aceda à sua conta para marcar e acompanhar os seus serviços.</p>
         </div>
         <div>
+          <a href="/recuperar">Esqueci-me da palavra-passe</a>
           <form onSubmit={submit}>
             {register && (
               <>
