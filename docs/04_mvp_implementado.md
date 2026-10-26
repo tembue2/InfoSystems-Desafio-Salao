@@ -42,8 +42,11 @@ Os gatilhos internos de auditoria/sincronização ficam no esquema `private`, se
 - `npm run typecheck` e `npm run build`.
 - `tests/database.sql`: teste transaccional com **ROLLBACK** obrigatório já incluído. Cria fixtures somente dentro da transacção e testa os quatro perfis, isolamento de dados, sobreposição, pagamentos parciais/integral, validação duplicada, estados, stock, auditoria, horários, indisponibilidades e agregação financeira.
 - `tests/browser.mjs`: teste visual com respostas de API simuladas, separado da evidência de execução real no PostgreSQL. Verifica desktop/telemóvel, acesso por perfil, formulário e recibo. Requer Playwright disponível e Chromium (`QA_CHROMIUM_PATH` opcional). Usa a configuração pública Supabase do projecto e não grava dados reais.
-- Não foi concluído o fluxo de login/recuperação por e-mail com contas reais nem o teste de duas reservas concorrentes por HTTP. A tentativa de criar contas temporárias para teste foi rejeitada pela revisão automática de permissões. Não foram criadas essas contas.
-- O teste de sobreposição executado é sequencial. A implementação usa bloqueio transaccional por profissional e revalida o horário após adquirir o bloqueio, mas isso não equivale a um teste concorrente concluído.
+- Após autorização, foram criadas quatro contas temporárias e verificado o login real no site de produção, encaminhamento e acesso por perfil (gerente, recepção, profissional e cliente), incluindo apresentação móvel. Os quatro perfis passaram sem erros JavaScript.
+- Duas chamadas HTTP concorrentes para o mesmo profissional e horário: exactamente uma reserva aceite e uma rejeitada. Registo de pagamento manteve a reserva pendente; validação integral confirmou. O profissional concluiu o atendimento e não conseguiu consultar pagamentos. Stock insuficiente foi rejeitado sem alterar o saldo.
+- Contas, sessões e registos temporários foram eliminados após os testes. Confirmado: zero contas/serviços/profissionais/produtos/marcações de teste remanescentes; as duas marcações anteriores foram preservadas.
+- Compilação e 46 verificações visuais com API simulada aprovadas. Deploy de produção READY, commit b15bcf3 (PR #3), em https://infosystems-desafio-salao.vercel.app.
+- Recuperação de palavra-passe por e-mail não foi testada de ponta a ponta: depende da configuração Auth/SMTP e de um endereço de recepção válido.
 
 ## Operação
 
