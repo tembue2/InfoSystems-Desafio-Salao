@@ -1,75 +1,127 @@
 import Link from "next/link";
+import Icon from "@/components/icon";
 export default function Home() {
   return (
     <>
       <section className="hero">
         <div className="hero-copy">
-          <div className="eyebrow">BELEZA, COM TEMPO PARA SI</div>
+          <div className="hero-kicker">
+            <span /> O SEU PRÓXIMO MOMENTO COMEÇA AQUI
+          </div>
           <h1>
-            O seu próximo
+            O seu estilo.
+            <br />O seu tempo.
             <br />
-            momento de <em>cuidado.</em>
+            <span>À sua maneira.</span>
           </h1>
           <p>
-            Mais simples de marcar. Mais tempo para desfrutar. Encontre o
-            serviço e o profissional para cuidar de si.
+            Reserve o seu próximo cuidado em poucos passos. Escolha o serviço,
+            encontre o horário e deixe o resto connosco.
           </p>
           <div className="actions">
             <Link className="button" href="/reservar">
-              Marcar o meu momento <span>↗</span>
+              Fazer uma marcação <Icon name="arrow" />
             </Link>
-            <Link className="text-link" href="/minhas-marcacoes">
-              Ver as minhas marcações →
+            <Link className="text-link" href="#como-funciona">
+              Como funciona <span>↓</span>
             </Link>
           </div>
           <div className="hero-note">
-            <span>✦</span> Escolha o horário que combina consigo.
+            <Icon name="check" size={16} /> Serviços, profissionais e horários
+            num só lugar.
           </div>
         </div>
-        <div className="hero-art" aria-hidden="true">
-          <div className="art-orbit" />
-          <div className="art-vase" />
-          <div className="art-stem stem-one" />
-          <div className="art-stem stem-two" />
-          <div className="art-stem stem-three" />
-          <span className="art-word">floresça.</span>
-          <div className="art-caption">
-            UM MOMENTO SÓ SEU
+        <div className="hero-visual">
+          <div className="visual-top">
+            <span>FEITO PARA SI</span>
+            <Icon name="spark" size={30} />
+          </div>
+          <div className="sculpture" aria-hidden="true">
+            <div />
+            <div />
+            <div />
+            <div />
+            <div />
+            <div />
+          </div>
+          <div className="visual-title">
+            O cuidado
             <br />
-            <b>Beleza em cada detalhe.</b>
+            tem o seu ritmo.
+          </div>
+          <div className="visual-bottom">
+            <span>BELEZA & BEM-ESTAR</span>
+            <span>01 — 03</span>
+          </div>
+          <div className="floating-label">
+            <span className="circle-icon">
+              <Icon name="calendar" />
+            </span>
+            <div>
+              <strong>Mais espaço na sua agenda.</strong>
+              <small>Mais tempo para si.</small>
+            </div>
+            <Icon name="arrow" size={18} />
           </div>
         </div>
       </section>
-      <section className="section">
+      <div className="benefit-strip">
+        {[
+          ["calendar", "Marcações online"],
+          ["user", "Escolha do profissional"],
+          ["clock", "Horários disponíveis"],
+          ["check", "Confirmação pela equipa"],
+        ].map(([icon, label]) => (
+          <span key={label}>
+            <Icon name={icon} size={18} />
+            {label}
+          </span>
+        ))}
+      </div>
+      <section className="section" id="como-funciona">
         <div className="section-heading">
           <div>
-            <div className="eyebrow">SIMPLES, DO INÍCIO AO FIM</div>
-            <h2>O cuidado começa na marcação.</h2>
+            <div className="eyebrow">SEM COMPLICAÇÕES</div>
+            <h2>
+              Do primeiro clique
+              <br />
+              ao seu próximo cuidado.
+            </h2>
           </div>
-          <span className="muted">
-            Três passos até ao seu próximo atendimento
-          </span>
+          <p>
+            Uma experiência simples.
+            <br />
+            Antes, durante e depois da marcação.
+          </p>
         </div>
         <div className="grid steps">
           {[
             [
               "01",
-              "Encontre o seu serviço",
-              "Consulte preços e duração. Escolha o cuidado de que precisa.",
+              "spark",
+              "Escolha o cuidado.",
+              "Consulte os serviços, preços e duração. Encontre o que combina consigo.",
             ],
             [
               "02",
-              "Escolha o seu momento",
-              "Seleccione um profissional e um horário disponível na agenda.",
+              "calendar",
+              "Encontre o momento.",
+              "Escolha o profissional e um dos horários disponíveis na agenda.",
             ],
             [
               "03",
-              "Confirme o pagamento",
-              "A equipa valida o pagamento integral e confirma a sua marcação.",
+              "check",
+              "Está quase tudo pronto.",
+              "Efectue o pagamento integral. A equipa valida o recebimento e confirma a marcação.",
             ],
-          ].map(([n, t, d]) => (
+          ].map(([n, icon, t, d]) => (
             <article className="card" key={n}>
-              <span className="step-number">{n}</span>
+              <div className="step-top">
+                <span className="step-icon">
+                  <Icon name={icon} size={25} />
+                </span>
+                <span className="step-number">{n}</span>
+              </div>
               <h3>{t}</h3>
               <p>{d}</p>
             </article>
@@ -77,13 +129,22 @@ export default function Home() {
         </div>
       </section>
       <section className="bottom-banner">
-        <div>
-          <div className="eyebrow">TUDO NUM SÓ LUGAR</div>
-          <h2>A sua agenda de beleza, sempre consigo.</h2>
-          <p>Acompanhe o estado das suas marcações na sua conta.</p>
+        <div className="banner-mark" aria-hidden="true">
+          <Icon name="spark" size={70} />
         </div>
-        <Link className="button ghost" href="/entrar">
-          Aceder à minha conta ↗
+        <div>
+          <div className="eyebrow">O SEU ESPAÇO PESSOAL</div>
+          <h2>
+            Menos mensagens.
+            <br />
+            Mais tempo para si.
+          </h2>
+          <p>
+            Acompanhe as suas marcações e consulte os detalhes na sua conta.
+          </p>
+        </div>
+        <Link className="button" href="/minhas-marcacoes">
+          Ver as minhas marcações <Icon name="arrow" />
         </Link>
       </section>
     </>
