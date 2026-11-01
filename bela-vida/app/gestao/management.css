@@ -1,0 +1,251 @@
+/* All management styles are scoped; the customer area is unchanged. */
+body:has(.management){padding-bottom:0;background:#f5f3f4}
+.management{--mg-paper:#f5f3f4;--mg-white:#fff;--mg-ink:#30232b;--mg-muted:#82747c;--mg-line:#e9e2e6;--mg-primary:#71334f;--mg-soft:#f1e6ec;--mg-deep:#2d1925;color:var(--mg-ink);font-family:var(--font-sans);font-size:14px;line-height:1.5;min-height:100dvh;background:var(--mg-paper)}
+.management h1,.management h2,.management h3{font-family:var(--font-display);letter-spacing:-.035em;font-weight:700;line-height:1.2}
+.management button,.management input,.management select,.management textarea{font-family:inherit}
+.management button,.management a{text-underline-offset:3px}
+.management :focus-visible{outline:2px solid #a3547c;outline-offset:3px}
+.management .mg-eyebrow{display:flex;align-items:center;gap:7px;font-family:var(--font-mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mg-muted)}
+.management .mg-logo{display:inline-flex;align-items:center;gap:9px;text-decoration:none;color:var(--mg-primary)}
+.management .mg-logo>span{font-family:var(--font-display);font-size:26px;font-weight:700;letter-spacing:-1px;line-height:1.1}
+.management .mg-logo small{display:block;font-family:var(--font-mono);font-weight:400;font-size:8px;text-transform:uppercase;letter-spacing:1.7px;margin-top:7px;color:var(--mg-muted)}
+.management .mg-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:11px 17px;background:var(--mg-primary);border:1px solid var(--mg-primary);border-radius:10px;color:#fff;font-size:12px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;line-height:1.4}
+.management .mg-button:hover{background:#5c2640;transform:none}
+.management .mg-button.secondary{background:#fff;color:var(--mg-ink);border-color:var(--mg-line)}
+.management .mg-button.secondary:hover{background:#faf7f9}
+.management .mg-button.danger-fill{background:#a73b4e;border-color:#a73b4e}
+.management .mg-icon-button{display:inline-grid;place-items:center;min-width:36px;min-height:36px;border-radius:9px;background:transparent;border:0;color:inherit}
+.management .mg-icon-button:hover{background:var(--mg-soft);transform:none}
+.management .mg-small-button{display:inline-flex;align-items:center;justify-content:center;min-height:33px;border:1px solid var(--mg-line);border-radius:7px;padding:7px 11px;background:white;font-size:11px;font-weight:600;white-space:nowrap}
+.management .mg-small-button:hover{border-color:var(--mg-primary);color:var(--mg-primary)}
+.management .mg-link{display:inline-flex;align-items:center;justify-content:flex-start;gap:6px;min-height:32px;border:0;background:transparent;color:var(--mg-primary);font-size:11px;font-weight:600;text-align:left;white-space:nowrap}
+.management .mg-link:hover{text-decoration:underline;transform:none}
+.management .mg-link.muted{color:var(--mg-muted)}.management .mg-link.danger{color:#a33249}
+.management .mg-help{font-size:11px;line-height:1.7;color:var(--mg-muted)}
+.management .mg-demo-pill{display:inline-flex;align-items:center;gap:6px;font-size:9px;font-weight:600;padding:5px 9px;white-space:nowrap;border:1px solid #e4d1be;background:#fff8eb;color:#8b683a;border-radius:6px;letter-spacing:.1px}
+.management .mg-demo-pill::before{content:'';width:5px;height:5px;border-radius:50%;background:#ad844b}
+.management .mg-entry{min-height:100dvh}
+.management.mg-entry{display:grid;grid-template-columns:1fr 1fr;background:#fff}
+.management .mg-entry-story{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;min-height:100dvh;background:var(--mg-deep);color:#f8edf3;padding:44px 56px}
+.management .mg-entry-story .mg-logo{color:#f8edf3}.management .mg-entry-story .mg-logo small{color:#bda2b3}
+.management .mg-entry-story>div{position:relative;z-index:1;margin-block:80px}
+.management .mg-entry-story .mg-eyebrow{color:#c6aabb}
+.management .mg-entry-story h1{font-size:clamp(50px,5.5vw,77px);line-height:1.03;letter-spacing:-3px;margin-top:22px;font-weight:500}
+.management .mg-entry-story>div>p{margin-top:26px;max-width:330px;color:#d2bcc9;font-size:14px;line-height:1.9}
+.management .mg-entry-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.management .mg-entry-pills>span{display:flex;align-items:center;gap:7px;padding:9px 12px;border:1px solid #ffffff25;border-radius:99px;font-size:11px;color:#e8d4df}
+.management .mg-entry-bottom{font-size:10px;color:#bda2b3;position:relative;z-index:1}
+.management .mg-entry-flower{position:absolute;right:-90px;bottom:100px;color:#e3bfd432;transform:rotate(-18deg);pointer-events:none}
+.management .mg-entry-main{display:flex;align-items:center;justify-content:center;padding:48px 44px;background:#fcfafb}
+.management .mg-entry-box{width:100%;max-width:400px}
+.management .mg-entry-box h2{font-size:36px;margin-top:20px}
+.management .mg-entry-box>p{font-size:13px;color:var(--mg-muted);margin:12px 0 30px;line-height:1.8}
+.management .mg-role-card{display:flex;align-items:center;gap:15px;width:100%;padding:22px 18px;background:#fff;border:1px solid var(--mg-line);border-radius:14px;margin-top:12px;text-align:left;transition:border-color .18s,box-shadow .18s}
+.management .mg-role-card:hover{transform:none;border-color:#a36a87;box-shadow:0 4px 20px #71334f08}
+.management .mg-role-icon{display:grid;place-items:center;width:48px;height:48px;flex-shrink:0;background:var(--mg-soft);border-radius:12px;color:var(--mg-primary)}
+.management .mg-role-card>span:nth-child(2){flex:1}.management .mg-role-card strong{display:block;font-size:17px;font-family:var(--font-display);letter-spacing:-.4px}
+.management .mg-role-card small{display:block;font-size:11px;color:var(--mg-muted);margin-top:5px;line-height:1.7}
+.management .mg-role-card>svg{color:var(--mg-primary)}
+.management .mg-entry-notice{display:flex;align-items:flex-start;gap:10px;margin-top:26px;padding:15px;background:#f3eff1;border-radius:10px;color:var(--mg-muted)}
+.management .mg-entry-notice svg{flex-shrink:0;margin-top:1px}.management .mg-entry-notice p{font-size:10px;line-height:1.8}
+.management .mg-back-site{display:inline-flex;align-items:center;gap:7px;font-size:11px;color:var(--mg-primary);margin-top:26px;min-height:40px}
+.management .mg-sidebar{position:fixed;inset:0 auto 0 0;width:222px;z-index:30;background:#fff;border-right:1px solid var(--mg-line);padding:30px 16px 16px;display:flex;flex-direction:column}
+.management .mg-sidebar>.mg-logo{padding-left:12px}
+.management .mg-workspace-label{margin:40px 12px 14px;font-family:var(--font-mono);font-size:8px;letter-spacing:1.5px;color:#a0929a}
+.management .mg-sidebar nav{display:flex;flex-direction:column;gap:5px}
+.management .mg-sidebar nav>button{display:flex;align-items:center;gap:11px;min-height:44px;border:0;border-radius:9px;padding:11px 12px;background:transparent;text-align:left;font-size:12px;color:#7d6b75}
+.management .mg-sidebar nav>button:hover{background:#faf6f8;transform:none}
+.management .mg-sidebar nav>button.active{background:var(--mg-soft);color:var(--mg-primary);font-weight:600}
+.management .mg-nav-count{display:grid;place-items:center;margin-left:auto;width:20px;height:20px;border-radius:6px;background:#ead4e0;color:var(--mg-primary);font-size:10px}
+.management .mg-sidebar-bottom{margin-top:auto;padding-top:24px}
+.management .mg-sidebar-tip{padding:16px 14px;background:#faf7f9;border:1px solid var(--mg-line);border-radius:12px;color:#b48ca3}
+.management .mg-sidebar-tip p{font-size:10px;line-height:1.8;color:var(--mg-muted);margin-top:9px;max-width:150px}
+.management .mg-profile{display:flex;align-items:center;gap:8px;border-top:1px solid var(--mg-line);padding-top:18px;margin-top:20px}
+.management .mg-profile>div{flex:1;min-width:0}.management .mg-profile strong{display:block;font-size:11px}.management .mg-profile small{display:block;font-size:8px;color:var(--mg-muted);margin-top:2px}
+.management .mg-profile .mg-icon-button{min-width:28px}
+.management .mg-avatar{display:inline-grid;place-items:center;flex-shrink:0;width:34px;height:34px;border-radius:50%;font-size:10px;font-weight:600;background:#eadddf;color:#8b536c}
+.management .mg-avatar.tone-1{background:#e0e9e2;color:#496d54}.management .mg-avatar.tone-2{background:#ebe4d9;color:#8c7751}
+.management .mg-content{margin-left:222px;min-width:0}
+.management .mg-topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px;padding:0 32px;border-bottom:1px solid var(--mg-line);background:#fff}
+.management .mg-topbar>div{display:flex;align-items:center;gap:16px;min-width:0}
+.management .mg-topbar-breadcrumb{font-size:11px;white-space:nowrap;color:var(--mg-muted)}.management .mg-topbar-breadcrumb>span{margin:0 11px;color:#c6bac0}.management .mg-topbar-breadcrumb strong{font-weight:500;color:#5e4e57}
+.management .mg-top-role{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:500;white-space:nowrap}
+.management .mg-role-dot{width:6px;height:6px;border-radius:50%;background:#8d5a75}
+.management .mg-demo-banner{display:flex;align-items:center;gap:8px;padding:9px 32px;background:#fbf7ed;border-bottom:1px solid #efe5d5;color:#8c7555;font-size:10px;line-height:1.6}
+.management .mg-demo-banner svg{flex-shrink:0}
+.management .mg-main{display:block;max-width:1600px;min-width:0;margin:0 auto;padding:30px 32px 0}
+.management .mg-page-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:27px}
+.management .mg-page-heading h1{font-size:32px;margin-top:9px;font-weight:500;letter-spacing:-1.1px}
+.management .mg-page-heading p{font-size:11px;color:var(--mg-muted);margin-top:9px;line-height:1.8}
+.management .mg-page-actions{display:flex;align-items:center;justify-content:flex-end;gap:10px;flex-wrap:wrap}
+.management .mg-date-control{display:flex;align-items:center;border:1px solid var(--mg-line);border-radius:9px;background:#fff;height:42px}
+.management .mg-date-control label{display:flex;align-items:center;gap:7px;color:#a08b97}
+.management .mg-date-control input{font-size:10px;color:#6c5c65;background:transparent;border:0;max-width:119px;padding:0;min-height:36px}
+.management .mg-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:24px}
+.management .mg-metrics.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.management .mg-metric{background:#fff;border:1px solid var(--mg-line);border-radius:12px;padding:20px;min-width:0}
+.management .mg-metric>div{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:10px;color:#83727c}
+.management .mg-metric>div>svg{color:#a88397;background:#f6f0f3;box-sizing:content-box;padding:7px;border-radius:8px}
+.management .mg-metric>strong{display:block;font-family:var(--font-display);font-weight:500;font-size:30px;letter-spacing:-1px;margin-top:14px;line-height:1.15}
+.management .mg-metric>p{font-size:9px;color:var(--mg-muted);margin-top:10px;line-height:1.6}
+.management .mg-dashboard-grid{display:grid;grid-template-columns:minmax(0,1fr) 290px;align-items:start;gap:20px;margin-bottom:22px}
+.management .mg-dashboard-aside{display:grid;gap:18px}
+.management .mg-panel{min-width:0;background:#fff;border:1px solid var(--mg-line);border-radius:12px;overflow:hidden}
+.management .mg-panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:21px 20px 18px}
+.management .mg-panel-head h2{font-size:16px;font-weight:500;letter-spacing:-.4px}.management .mg-panel-head p{font-size:9px;margin-top:5px;color:var(--mg-muted);line-height:1.7}
+.management .mg-table-scroll{overflow-x:auto;overscroll-behavior-x:contain}
+.management .mg-table{width:100%;border-collapse:collapse;text-align:left;white-space:normal;font-size:11px}
+.management .mg-table th{font-size:9px;color:#9b8b94;font-weight:500;background:#fbf9fa;padding:12px 18px;border-block:1px solid var(--mg-line);white-space:nowrap}
+.management .mg-table td{padding:17px 18px;border-bottom:1px solid #f0eaf0;vertical-align:middle}
+.management .mg-table tr:last-child td{border-bottom:0}
+.management .mg-table tbody tr:hover{background:#fcfafb}
+.management .mg-table b{font-weight:600;font-size:11px}.management .mg-table small{display:block;margin-top:4px;font-size:9px;color:var(--mg-muted)}
+.management .mg-table-client{display:flex;align-items:center;gap:13px;min-width:165px}
+.management .mg-table-time{font-family:var(--font-mono);font-size:10px;color:var(--mg-primary)}
+.management .mg-table-action{display:grid;place-items:center;min-width:32px;min-height:32px;border:1px solid var(--mg-line);background:transparent;border-radius:8px;color:#957083}
+.management .mg-service-cell{display:block;max-width:170px;min-width:80px;font-size:10px;color:#84717c}
+.management .mg-nowrap{white-space:nowrap;font-size:10px}
+.management .mg-badge{display:inline-flex;align-items:center;gap:5px;padding:5px 7px;border-radius:6px;white-space:nowrap;font-size:8px;font-weight:500}
+.management .mg-badge i{width:4px;height:4px;border-radius:50%;background:currentColor}
+.management .mg-pending{background:#fcf1db;color:#a17e39}.management .mg-confirmed{background:#e9f2ec;color:#58886a}.management .mg-in_progress{background:#eee7f5;color:#8a6aa8}.management .mg-completed{background:#eef1f3;color:#718590}.management .mg-cancelled,.management .mg-no_show{background:#f6e8eb;color:#a76673}
+.management .mg-attention{background:var(--mg-deep);color:#f3e8ee;padding:23px 21px;border-radius:12px}
+.management .mg-attention .mg-eyebrow{color:#c2a3b5;font-size:8px;letter-spacing:1px}
+.management .mg-attention h2{font-size:23px;font-weight:500;margin-top:16px;max-width:220px;letter-spacing:-.6px;line-height:1.18}
+.management .mg-attention p{font-size:10px;color:#c8b2bf;margin-top:14px;line-height:1.85}
+.management .mg-attention .mg-button{margin-top:19px;background:#eadbe4;color:#62364f;border-color:transparent;font-size:10px;width:100%;justify-content:space-between;min-height:36px;padding:9px 12px}
+.management .mg-team-load{padding:0 20px 18px}.management .mg-team-load>div:first-child{display:flex;align-items:center;gap:9px}
+.management .mg-team-load b{font-size:11px;font-weight:500;display:block}.management .mg-team-load small{display:block;font-size:8px;color:var(--mg-muted);margin-top:3px}
+.management .mg-load-track{height:4px;border-radius:99px;background:#f2edf0;overflow:hidden;margin-top:10px}
+.management .mg-load-track>span{display:block;height:100%;border-radius:99px;background:#b3849e}
+.management .mg-activity{padding:0 20px 10px}
+.management .mg-activity>div{display:flex;align-items:center;gap:10px;padding:13px 0;border-top:1px solid var(--mg-line);font-size:11px}
+.management .mg-activity>div>p{flex:1}.management .mg-activity small{display:block;color:var(--mg-muted);font-size:9px;margin-top:3px}.management .mg-activity-dot{width:6px;height:6px;border-radius:50%;background:#b994aa}
+.management .mg-activity>div>svg{color:#b2bdb3}
+.management .mg-toolbar{display:flex;align-items:center;gap:12px;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap}
+.management .mg-search{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--mg-line);border-radius:9px;min-height:42px;padding:0 13px;color:#ac98a3;min-width:220px;flex:1;max-width:380px}
+.management .mg-search input{border:0;min-height:40px;width:100%;min-width:0;font-size:11px;color:var(--mg-ink);background:transparent;padding:6px 0}
+.management .mg-search input:focus{outline:none}
+.management .mg-search:focus-within{outline:2px solid #a3547c;outline-offset:2px}
+.management .mg-toolbar>select,.management .mg-month-label input{padding:11px 12px;min-height:42px;max-width:100%;border:1px solid var(--mg-line);border-radius:9px;background:#fff;color:#74616c;font-size:11px}
+.management .mg-agenda-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
+.management .mg-agenda-layout>.mg-panel:nth-child(2){display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding-bottom:20px}
+.management .mg-agenda-layout>.mg-panel:nth-child(2)>.mg-panel-head{grid-column:1/-1}
+.management .mg-agenda-person{padding:0 20px;border-right:1px solid var(--mg-line)}.management .mg-agenda-person:last-child{border-right:0}
+.management .mg-person-heading{display:flex;gap:10px;align-items:center;margin-bottom:18px}.management .mg-person-heading b{display:block;font-size:12px}.management .mg-person-heading small{font-size:9px;color:var(--mg-muted)}
+.management .mg-agenda-slot{display:block;width:100%;text-align:left;border:0;border-left:3px solid #9ab9a5;border-radius:7px;margin-top:9px;background:#f0f5f1;padding:11px 12px;color:#566d5d}
+.management .mg-agenda-slot time{font-family:var(--font-mono);font-size:9px;display:block}.management .mg-agenda-slot strong{display:block;font-size:11px;font-weight:600;margin-top:6px}.management .mg-agenda-slot>span{display:block;margin-top:3px;font-size:9px}
+.management .mg-slot-pending{background:#fcf6e8;color:#97814c;border-left-color:#ccb16d}.management .mg-slot-in_progress{background:#f2edf6;color:#886e9e;border-left-color:#af97c1}.management .mg-slot-completed{background:#f0f2f3;color:#7f909a;border-left-color:#afbbc2}
+.management .mg-customer-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.management .mg-customer-card{background:#fff;border:1px solid var(--mg-line);border-radius:12px;padding:22px}
+.management .mg-customer-card>div:first-child{display:flex;align-items:center;justify-content:space-between}
+.management .mg-customer-card>.mg-link{margin-top:18px}.management .mg-customer-card h2{font-size:19px;margin-top:18px;letter-spacing:-.5px;font-weight:500}.management .mg-customer-card>p{font-size:11px;color:var(--mg-muted);margin-top:6px}
+.management .mg-customer-stats{display:flex;align-items:center;gap:30px;margin-top:23px;padding-bottom:17px;border-bottom:1px solid var(--mg-line)}
+.management .mg-customer-stats>span{font-size:9px;color:var(--mg-muted)}.management .mg-customer-stats strong{display:block;font-family:var(--font-display);font-size:23px;color:var(--mg-ink);font-weight:500;margin-bottom:3px}
+.management .mg-payment-summary{display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;gap:20px;background:#fff;border:1px solid var(--mg-line);border-radius:12px;padding:24px;margin-bottom:24px}
+.management .mg-payment-summary>div{display:flex;align-items:center;gap:14px}.management .mg-payment-summary svg{color:#b395a6}.management .mg-payment-summary span{font-size:10px;color:var(--mg-muted)}.management .mg-payment-summary strong{display:block;margin-top:7px;font-family:var(--font-display);font-size:27px;font-weight:500;letter-spacing:-1px;color:var(--mg-ink)}.management .mg-payment-summary>p{font-size:10px;color:var(--mg-muted);line-height:1.9}
+.management .mg-tabs{display:flex;padding:4px;border:1px solid var(--mg-line);background:#ebe7e9;border-radius:9px;gap:3px}
+.management .mg-tabs button{display:flex;align-items:center;gap:8px;padding:9px 15px;font-size:11px;color:#85717c;border:0;border-radius:6px;min-height:34px}
+.management .mg-tabs button[aria-pressed=true]{background:#fff;color:var(--mg-primary);box-shadow:0 1px 4px #31202b08;font-weight:600}
+.management .mg-tabs button span{font-size:9px;background:var(--mg-soft);padding:1px 5px;border-radius:4px}
+.management .mg-inline-actions{display:flex;align-items:center;gap:13px;flex-wrap:wrap}
+.management .mg-month-label{display:flex;align-items:center;gap:12px;font-size:11px;color:var(--mg-muted)}
+.management .mg-finance-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
+.management .mg-method-row{padding:0 22px 23px}.management .mg-method-row>div:first-child{display:flex;justify-content:space-between;font-size:11px}.management .mg-method-row strong{font-weight:500}.management .mg-method-row .mg-load-track{height:7px;margin-top:11px}
+.management .mg-expense-list{padding:0 22px 12px}.management .mg-expense-list>div:not(.mg-empty){display:flex;justify-content:space-between;gap:15px;padding:15px 0;border-top:1px solid var(--mg-line);font-size:11px}.management .mg-expense-list b{font-weight:500;display:block}.management .mg-expense-list small{display:block;color:var(--mg-muted);font-size:9px;margin-top:5px}.management .mg-expense-list strong{font-weight:500;white-space:nowrap}
+.management .mg-tag{display:inline-flex;align-items:center;min-height:23px;padding:4px 8px;background:#f0eced;color:#93828a;border-radius:5px;font-size:9px}.management .mg-tag.good{background:#eaf1eb;color:#6c8d72}
+.management .mg-team-card-count{display:flex;align-items:center;gap:9px;margin-top:25px;border-top:1px solid var(--mg-line);padding-top:18px}.management .mg-team-card-count strong{font-family:var(--font-display);font-size:26px;font-weight:500}.management .mg-team-card-count span{font-size:10px;color:var(--mg-muted)}.management .mg-team-card>.mg-inline-actions{margin-top:20px}
+.management .mg-access-note{display:flex;align-items:flex-start;gap:16px;padding:23px;border:1px solid #ddcdd6;background:#f0e7ec;border-radius:12px;margin-bottom:22px}.management .mg-access-note>svg{color:#a1778e;flex-shrink:0}.management .mg-access-note h2{font-size:20px;font-weight:500}.management .mg-access-note p{font-size:11px;color:var(--mg-muted);max-width:600px;margin-top:9px;line-height:1.8}
+.management .mg-access-yes{display:inline-flex;gap:7px;align-items:center;font-size:11px;color:#60816a}
+.management .mg-access-actions{margin-top:22px;padding:23px;background:#fff;border:1px solid var(--mg-line);border-radius:12px}.management .mg-access-actions h2{font-size:19px;font-weight:500}.management .mg-access-actions p{font-size:11px;color:var(--mg-muted);margin:9px 0 17px}
+.management .mg-empty{display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:45px 20px;color:#ac9ba5}
+.management .mg-empty h3{font-size:17px;font-weight:500;color:#77646f;margin-top:15px}.management .mg-empty p{font-size:11px;color:var(--mg-muted);margin-top:6px}
+.management .mg-workspace-footer{display:flex;justify-content:space-between;gap:12px;padding:28px 0;margin-top:15px;font-size:9px;color:#a3949d}
+.management .mg-toast{position:fixed;bottom:24px;left:calc(50% + 110px);transform:translateX(-50%);z-index:60;display:flex;align-items:center;gap:10px;max-width:calc(100vw - 50px);padding:14px 18px;background:var(--mg-deep);color:#f5eaf0;border-radius:12px;box-shadow:0 8px 35px #24132325;font-size:12px}
+.management .mg-toast>span{flex:1}.management .mg-toast button{display:grid;place-items:center;min-width:28px;min-height:28px}.management .mg-toast>svg{flex-shrink:0;color:#bdcfbd}
+.management .mg-dialog{position:fixed;inset:0;margin:auto;border:1px solid var(--mg-line);padding:0;border-radius:17px;width:min(470px,calc(100vw - 32px));max-height:calc(100dvh - 40px);background:#fff;color:var(--mg-ink);box-shadow:0 22px 90px #22121f35;overflow:auto}
+.management .mg-dialog::backdrop{background:#21131d70;backdrop-filter:blur(2px)}
+.management .mg-dialog-wide{width:min(660px,calc(100vw - 32px))}
+.management .mg-dialog>header{position:sticky;top:0;z-index:2;display:flex;align-items:flex-start;justify-content:space-between;gap:15px;background:#fff;padding:23px 25px;border-bottom:1px solid var(--mg-line)}
+.management .mg-dialog>header h2{font-size:23px;font-weight:500}.management .mg-dialog>header p{margin-top:5px;font-size:11px;color:var(--mg-muted)}
+.management .mg-form{padding:23px 25px}
+.management .mg-form>label,.management .mg-form-grid>label{display:flex;flex-direction:column;gap:8px;font-size:11px;font-weight:600;margin-bottom:17px;color:#705c68}
+.management .mg-form input:not([type=checkbox]),.management .mg-form select,.management .mg-form textarea{display:block;width:100%;min-width:0;min-height:44px;padding:12px;border:1px solid #e1d6dd;background:#fcfafb;color:var(--mg-ink);border-radius:9px;font-size:13px;line-height:1.4;font-weight:400}
+.management .mg-form textarea{min-height:80px;resize:vertical}
+.management .mg-form .mg-help{margin-top:-3px;margin-bottom:17px;font-weight:400}
+.management .mg-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.management .mg-form fieldset{margin:19px 0 0;border:0;padding:0}
+.management .mg-form legend{font-size:11px;font-weight:600;color:#705c68;margin-bottom:9px}
+.management .mg-service-picker{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.management .mg-service-picker>label{display:flex;align-items:center;gap:8px;padding:11px 10px;border:1px solid var(--mg-line);border-radius:9px;font-size:10px;cursor:pointer;min-height:58px}
+.management .mg-service-picker>label.selected{background:#f4eaf0;border-color:#bd94aa}
+.management .mg-service-picker input{width:14px;height:14px;accent-color:var(--mg-primary);flex-shrink:0}
+.management .mg-service-picker span{flex:1;font-size:10px;font-weight:500}.management .mg-service-picker small{display:block;color:var(--mg-muted);font-size:8px;margin-top:3px}.management .mg-service-picker b{white-space:nowrap;font-size:9px;font-weight:500}
+.management .mg-selection-total{display:flex;justify-content:space-between;gap:10px;padding:14px 0;margin-bottom:12px;font-size:12px}.management .mg-selection-total>span{display:flex;align-items:center;gap:7px;color:var(--mg-muted);font-size:10px}
+.management .mg-form-actions{display:flex;align-items:center;justify-content:flex-end;gap:10px;border-top:1px solid var(--mg-line);padding-top:18px;margin-top:20px}
+.management .mg-dialog>.mg-form-actions{margin:0;padding:18px 25px}
+.management .mg-form-error{background:#fbebed;color:#a13e50;font-size:12px;line-height:1.7;padding:12px;border-radius:8px;margin-block:12px}
+.management .mg-payment-total{display:flex;flex-direction:column;text-align:center;background:#f5edf2;border:1px solid #ecdae4;border-radius:12px;padding:25px 15px;margin-bottom:23px}
+.management .mg-payment-total>span{font-size:12px;color:#816476}.management .mg-payment-total small{font-size:10px;color:var(--mg-muted);margin-top:5px}.management .mg-payment-total strong{font-size:39px;font-family:var(--font-display);letter-spacing:-1px;font-weight:500;color:var(--mg-primary);margin-block:16px 8px}
+.management .mg-detail-body{padding:24px 25px;font-size:12px;line-height:1.8}
+.management .mg-detail-customer{display:flex;align-items:center;gap:12px;margin-bottom:24px}.management .mg-detail-customer>div{flex:1}.management .mg-detail-customer h3{font-size:20px;font-weight:500}.management .mg-detail-customer p{color:var(--mg-muted);font-size:11px;margin-top:5px}
+.management .mg-detail-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;background:#f9f6f8;border-radius:10px;padding:16px;margin-bottom:23px}.management .mg-detail-facts dt{font-size:9px;color:var(--mg-muted)}.management .mg-detail-facts dd{font-size:12px;margin-top:5px}
+.management .mg-detail-services>div{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid var(--mg-line);font-size:12px}.management .mg-detail-services strong{font-weight:500;white-space:nowrap}
+.management .mg-detail-services .mg-detail-total{font-size:17px;font-family:var(--font-display);border-bottom:0;padding-top:17px}
+.management .mg-detail-note{padding:14px;background:#fcf6eb;color:#977e50;border-radius:8px;font-size:11px;line-height:1.8;margin-block:15px}
+.management .mg-detail-actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:22px}
+.management .mg-receipt-link{display:flex;align-items:center;gap:7px;width:100%;padding:16px 0 0;margin-top:18px;border-top:1px solid var(--mg-line);font-size:11px;color:var(--mg-primary)}.management .mg-receipt-link>svg:last-child{margin-left:auto}
+.management .mg-customer-detail{display:flex;align-items:center;gap:13px;margin-bottom:20px}.management .mg-customer-detail>div{flex:1}.management .mg-customer-detail h3{font-size:20px;font-weight:500}.management .mg-customer-detail p{font-size:11px;color:var(--mg-muted);margin-top:3px}
+.management .mg-detail-subheading{font-size:17px;margin:26px 0 12px;font-weight:500}
+.management .mg-history-row{display:flex;align-items:center;gap:10px;width:100%;text-align:left;padding:15px 0;border-top:1px solid var(--mg-line)}.management .mg-history-row>span:first-child{flex:1}.management .mg-history-row b{display:block;font-size:11px;font-weight:500}.management .mg-history-row small{display:block;font-size:9px;color:var(--mg-muted);margin-top:4px}
+.management .mg-receipt{padding:28px;text-align:center;color:#46313e}.management .mg-receipt>svg{margin:auto;color:var(--mg-primary)}.management .mg-receipt h3{font-size:26px;font-weight:500;margin-top:12px}.management .mg-receipt>p{font-size:9px;color:var(--mg-muted);margin-top:9px;line-height:1.7}
+.management .mg-receipt dl{margin-block:28px 20px;text-align:left}.management .mg-receipt dl>div{display:flex;justify-content:space-between;gap:15px;padding:7px 0;font-size:10px}.management .mg-receipt dt{color:var(--mg-muted)}.management .mg-receipt dd{max-width:65%;overflow-wrap:anywhere;text-align:right}
+.management .mg-receipt-line{display:flex;justify-content:space-between;gap:15px;font-size:11px;padding:12px 0;border-top:1px dashed #cfc1ca;text-align:left}.management .mg-receipt-line b{font-weight:500;white-space:nowrap}
+.management .mg-receipt-total{display:flex;justify-content:space-between;gap:10px;border-block:1px solid #cfc1ca;margin:12px 0 25px;padding:16px 0;font-size:12px}.management .mg-receipt-total strong{font-family:var(--font-display);font-size:22px;font-weight:500}
+.management .mg-mobile-close,.management .mg-menu-toggle,.management .mg-menu-backdrop,.management .mg-bottom-nav{display:none}
+.management .mg-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(min-width:1440px){.management .mg-dashboard-grid{grid-template-columns:minmax(0,1fr) 330px}.management .mg-table td{padding-block:22px}.management .mg-main{padding-inline:40px}.management .mg-topbar{padding-inline:40px}}
+@media(max-width:1200px){.management .mg-page-heading{align-items:flex-start;flex-direction:column;gap:18px}.management .mg-page-actions{justify-content:flex-start}.management .mg-dashboard-grid{grid-template-columns:minmax(0,1fr)}.management .mg-dashboard-aside{grid-template-columns:1fr 1fr;align-items:stretch}.management .mg-metric{padding:17px}.management .mg-metric>strong{font-size:26px}.management .mg-customer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.management .mg-payment-summary{grid-template-columns:1fr 1fr}.management .mg-payment-summary>p{grid-column:1/-1;border-top:1px solid var(--mg-line);padding-top:14px}.management .mg-payment-summary>p br{display:none}}
+@media(max-width:900px){.management .mg-sidebar{width:200px;padding-inline:12px}.management .mg-content{margin-left:200px}.management .mg-main{padding-inline:22px}.management .mg-topbar{padding-inline:22px}.management .mg-demo-banner{padding-inline:22px}.management .mg-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.management .mg-finance-grid{grid-template-columns:1fr}.management .mg-metrics.three{grid-template-columns:1fr 1fr}.management .mg-metrics.three .mg-metric:last-child{grid-column:1/-1}.management .mg-entry-story{padding:35px}.management .mg-entry-main{padding:35px}.management .mg-entry-box h2{font-size:30px}.management .mg-entry-story h1{font-size:57px}}
+@media(max-width:767px){
+ .management.mg-entry{display:block}.management .mg-entry-story{min-height:0;padding:24px}.management .mg-entry-story>div{margin-block:40px 20px}.management .mg-entry-story h1{font-size:45px;letter-spacing:-1.8px}.management .mg-entry-story h1 br{display:none}.management .mg-entry-story>div>p{font-size:12px;line-height:1.8;margin-top:15px;max-width:340px}.management .mg-entry-pills{margin-top:20px;gap:6px}.management .mg-entry-pills>span{font-size:10px;padding:7px 9px}.management .mg-entry-bottom{display:none}.management .mg-entry-flower{width:200px;height:200px;bottom:20px;right:-40px}.management .mg-entry-main{padding:30px 22px 40px}.management .mg-entry-box{max-width:460px}.management .mg-entry-box h2{font-size:29px}.management .mg-entry-box>p{font-size:12px;margin-bottom:22px}.management .mg-role-card{min-height:96px;padding:18px 14px;gap:12px}.management .mg-role-card strong{font-size:18px}.management .mg-role-card small{font-size:11px}.management .mg-entry-notice p{font-size:11px}
+ .management .mg-sidebar{display:none;inset:0 auto 0 0;width:258px;z-index:80;box-shadow:12px 0 60px #22111f25;padding:28px 17px 18px}.management .mg-sidebar.open{display:flex}.management .mg-sidebar>.mg-logo{padding-left:0}.management .mg-mobile-close{display:grid;position:absolute;right:12px;top:25px}.management .mg-sidebar .mg-workspace-label{margin-top:34px}.management .mg-sidebar nav>button{min-height:46px;font-size:13px}.management .mg-sidebar-tip{display:none}.management .mg-menu-backdrop{display:block;position:fixed;inset:0;background:#27182280;z-index:75;border:0}.management .mg-content{margin-left:0;padding-bottom:calc(68px + env(safe-area-inset-bottom,0px))}.management .mg-topbar{height:60px;padding:0 16px;gap:8px}.management .mg-topbar>div{gap:8px}.management .mg-topbar-breadcrumb{font-size:11px}.management .mg-topbar-breadcrumb>span{margin-inline:6px}.management .mg-top-role{display:none}.management .mg-menu-toggle{display:grid;min-width:32px;min-height:40px}.management .mg-demo-pill{font-size:8px;padding:4px 7px}.management .mg-demo-banner{padding:9px 18px;align-items:flex-start;font-size:9px;line-height:1.8}.management .mg-demo-banner svg{margin-top:2px}.management .mg-main{padding:24px 18px 0}.management .mg-page-heading{gap:17px;margin-bottom:22px}.management .mg-page-heading h1{font-size:29px;letter-spacing:-.8px;margin-top:9px}.management .mg-page-heading p{font-size:11px;line-height:1.8}.management .mg-eyebrow{font-size:8px;letter-spacing:1px}.management .mg-page-actions{gap:8px;width:100%;justify-content:space-between}.management .mg-page-actions>.mg-button{flex:1;padding:11px 12px;font-size:11px;min-height:44px}.management .mg-date-control{height:44px}.management .mg-date-control input{font-size:10px;max-width:111px}.management .mg-date-control .mg-icon-button{min-width:26px;min-height:40px}.management .mg-date-control label>svg{display:none}.management .mg-metrics{gap:10px;margin-bottom:18px}.management .mg-metric{padding:15px 13px;border-radius:10px}.management .mg-metric>div{font-size:9px;gap:4px}.management .mg-metric>div>svg{width:15px;height:15px;padding:5px}.management .mg-metric>strong{font-size:25px;letter-spacing:-.8px;margin-top:12px}.management .mg-metric>p{font-size:8px;line-height:1.6;margin-top:8px}.management .mg-dashboard-grid{gap:16px;margin-bottom:16px}.management .mg-dashboard-aside{display:flex;flex-direction:column;gap:16px}.management .mg-attention{padding:22px}.management .mg-attention h2{max-width:none;font-size:25px}.management .mg-attention p{font-size:11px}.management .mg-attention .mg-button{min-height:44px;font-size:12px}.management .mg-panel-head{padding:18px 16px 16px}.management .mg-panel-head h2{font-size:17px}.management .mg-panel-head p{font-size:9px}.management .mg-table th{padding:11px 14px;font-size:9px}.management .mg-table td{padding:15px 14px;font-size:11px}.management .mg-table-action{min-height:44px;min-width:44px}.management .mg-small-button{min-height:42px;font-size:11px}.management .mg-link{min-height:40px;font-size:11px}.management .mg-team-load{padding:0 17px 18px}.management .mg-team-load b{font-size:12px}.management .mg-team-load small{font-size:10px}.management .mg-team-load .mg-load-track{margin-left:44px}.management .mg-table-scroll{scrollbar-width:thin}.management .mg-service-cell{min-width:100px}.management .mg-badge{font-size:9px}.management .mg-toolbar{gap:9px;margin-bottom:17px}.management .mg-search{max-width:none;min-width:0;flex-basis:100%;min-height:46px}.management .mg-search input{font-size:16px;min-height:44px}.management .mg-toolbar>select{flex:1;width:45%;font-size:12px;min-height:44px}.management .mg-agenda-layout>.mg-panel:nth-child(2){grid-template-columns:1fr;gap:23px}.management .mg-agenda-person{border-right:0;padding-inline:17px}.management .mg-agenda-slot{min-height:82px}.management .mg-agenda-slot strong{font-size:13px}.management .mg-agenda-slot time,.management .mg-agenda-slot>span{font-size:10px}.management .mg-customer-grid{grid-template-columns:1fr;gap:12px}.management .mg-customer-card{padding:19px}.management .mg-customer-card h2{font-size:21px;margin-top:12px}.management .mg-customer-card>.mg-link{margin-top:10px}.management .mg-customer-stats{margin-top:17px;padding-bottom:12px}.management .mg-customer-card>div:first-child>.mg-icon-button{min-height:44px;min-width:44px}.management .mg-payment-summary{padding:18px 15px;gap:17px 10px;grid-template-columns:1fr 1fr;margin-bottom:20px}.management .mg-payment-summary>div{gap:9px}.management .mg-payment-summary>div>svg{width:18px;flex-shrink:0}.management .mg-payment-summary strong{font-size:24px}.management .mg-payment-summary span{font-size:9px}.management .mg-payment-summary>p{font-size:10px}.management .mg-tabs{width:100%}.management .mg-tabs button{flex:1;justify-content:center;min-height:40px;font-size:12px}.management .mg-toolbar .mg-inline-actions{width:100%;justify-content:space-between;gap:8px}.management .mg-toolbar .mg-inline-actions>.mg-button{flex:1;font-size:11px;padding-inline:12px;min-height:44px}.management .mg-month-label{width:100%;justify-content:space-between}.management .mg-month-label input{font-size:16px;flex:1;max-width:220px}.management .mg-metrics.three{grid-template-columns:1fr 1fr}.management .mg-access-note{padding:18px;gap:12px}.management .mg-access-note h2{font-size:19px}.management .mg-access-note p{font-size:11px}.management .mg-workspace-footer{padding-block:24px;font-size:8px;gap:8px}.management .mg-bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:40;display:flex;justify-content:space-around;align-items:center;background:#fff;border-top:1px solid var(--mg-line);padding:7px 5px calc(7px + env(safe-area-inset-bottom,0px));box-shadow:0 -4px 20px #28152205}.management .mg-bottom-nav>button{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:5px;min-height:48px;min-width:50px;padding:5px 8px;color:#aa98a2;font-size:9px;border-radius:9px}.management .mg-bottom-nav>button[aria-current=page]{background:var(--mg-soft);color:var(--mg-primary)}.management .mg-toast{bottom:calc(83px + env(safe-area-inset-bottom,0px));left:50%;width:calc(100% - 28px);max-width:450px;font-size:11px;padding:12px 14px}.management .mg-toast button{min-width:32px;min-height:32px}
+ .management .mg-dialog,.management .mg-dialog-wide{width:calc(100vw - 20px);max-height:calc(100dvh - 24px);border-radius:15px}.management .mg-dialog>header{padding:19px 18px}.management .mg-dialog>header h2{font-size:22px}.management .mg-dialog>header .mg-icon-button{min-height:40px;min-width:40px}.management .mg-form{padding:21px 18px}.management .mg-form>label,.management .mg-form-grid>label{font-size:12px}.management .mg-form input:not([type=checkbox]),.management .mg-form select,.management .mg-form textarea{font-size:16px;min-height:47px;padding:11px}.management .mg-service-picker{grid-template-columns:1fr}.management .mg-service-picker>label{min-height:60px;padding:13px}.management .mg-service-picker span{font-size:12px}.management .mg-service-picker small{font-size:10px}.management .mg-service-picker b{font-size:11px}.management .mg-service-picker input{width:17px;height:17px}.management .mg-form-grid{gap:10px}.management .mg-form-actions{gap:8px;flex-wrap:wrap}.management .mg-form-actions>.mg-button{flex:1;min-height:46px;font-size:12px}.management .mg-form .mg-help{font-size:11px}.management .mg-detail-body{padding:20px 18px}.management .mg-detail-customer{flex-wrap:wrap;gap:10px}.management .mg-detail-customer h3{font-size:20px}.management .mg-detail-customer>.mg-badge{margin-left:44px}.management .mg-detail-facts{grid-template-columns:1fr 1fr;gap:16px;padding:15px}.management .mg-detail-facts dt{font-size:10px}.management .mg-detail-facts dd{font-size:12px}.management .mg-detail-actions>.mg-button{flex:1;min-height:46px;font-size:12px}.management .mg-detail-actions>.mg-link{min-height:44px}.management .mg-history-row{flex-wrap:wrap}.management .mg-history-row>span:first-child{min-width:170px}.management .mg-history-row b{font-size:12px}.management .mg-history-row small{font-size:10px}.management .mg-receipt{padding:24px 20px}
+}
+@media(max-width:359px){.management .mg-topbar-breadcrumb{font-size:10px}.management .mg-topbar>div{gap:4px}.management .mg-demo-pill{font-size:7px}.management .mg-page-actions{flex-direction:column;align-items:stretch}.management .mg-date-control{justify-content:space-between}.management .mg-date-control input{max-width:none;font-size:12px}.management .mg-metric>strong{font-size:22px}.management .mg-metric>div>svg{display:none}.management .mg-bottom-nav>button{min-width:44px;font-size:8px;padding-inline:4px}.management .mg-main{padding-inline:14px}.management .mg-form-grid{grid-template-columns:1fr}.management .mg-role-card{gap:10px}.management .mg-role-icon{width:40px;height:40px}}
+@media print{body:has(.management){background:#fff!important;margin:0!important;padding:0!important}body:has(.management) *{visibility:hidden!important}.management .mg-dialog{position:absolute!important;inset:0!important;max-height:none!important;width:100%!important;max-width:none!important;border:0!important;box-shadow:none!important;overflow:visible!important}.management .mg-dialog::backdrop{background:transparent!important}.management .mg-receipt,.management .mg-receipt *{visibility:visible!important}.management .mg-receipt{position:absolute!important;left:0!important;top:0!important;width:100%!important;padding:30px!important}.management .mg-dialog>header,.management .mg-form-actions{display:none!important}}
+
+.management .mg-mobile-appointments{display:none}
+@media(max-width:767px){
+ .management .mg-appointments-table{display:none}
+ .management .mg-mobile-appointments{display:block}
+ .management .mg-mobile-appointments>button{display:block;width:100%;text-align:left;padding:17px 16px;border-top:1px solid var(--mg-line);background:white}
+ .management .mg-mobile-appointments>button:hover{transform:none;background:#fcfafb}
+ .management .mg-mobile-appointments>button>div:first-child{display:flex;gap:12px;align-items:flex-start}
+ .management .mg-mobile-appointments time{font-size:13px;font-family:var(--font-mono);color:var(--mg-primary);width:45px;flex-shrink:0;line-height:1.4}
+ .management .mg-mobile-appointments time small{display:block;color:var(--mg-muted);font-size:9px;margin-top:5px}
+ .management .mg-mobile-appointments>button>div:first-child>span{flex:1;min-width:0}
+ .management .mg-mobile-appointments strong{display:block;font-size:13px;font-weight:600;line-height:1.5}
+ .management .mg-mobile-appointments>button>div:first-child>span>small{display:block;color:var(--mg-muted);font-size:11px;margin-top:4px}
+ .management .mg-mobile-appointments>button>div:first-child>svg{color:#aa879b;flex-shrink:0}
+ .management .mg-mobile-appointments>button>div:last-child{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:13px 0 0 57px}
+ .management .mg-mobile-appointments>button>div:last-child>span:last-child{font-size:10px;color:var(--mg-muted)}
+}
+
+@media(max-width:767px){
+ .management .mg-metric>div{font-size:10px}
+ .management .mg-metric>p{font-size:10px}
+ .management .mg-demo-banner{font-size:10px}
+ .management .mg-panel-head p{font-size:10px}
+ .management .mg-badge{font-size:10px}
+ .management .mg-topbar .mg-menu-toggle{min-width:44px;min-height:44px}
+}
+/* Operational extensions; scoped to management. */
+.management .mg-calendar-controls{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.management .mg-calendar-scroll{overflow-x:auto}.management .mg-calendar{display:grid;grid-template-columns:repeat(7,minmax(125px,1fr));min-width:875px;padding:0 18px 18px;gap:1px;background:#e5e6df}.management .mg-calendar-weekday{padding:12px;background:#f7f7f2;font-size:12px;font-weight:700}.management .mg-calendar-day{background:white;padding:10px;min-height:150px}.management .mg-calendar.week .mg-calendar-day{min-height:360px}.management .mg-calendar-day.today{box-shadow:inset 0 3px #54765b}.management .mg-calendar-day.outside{background:#f6f6f2}.management .mg-calendar-date{display:flex;justify-content:space-between;align-items:center;gap:5px;width:100%;text-align:left;margin-bottom:10px;min-height:44px}.management .mg-calendar-date span{font-size:10px;color:#69716b}.management .mg-calendar-booking{width:100%;text-align:left;background:#edf2e9;border-left:3px solid #678367;border-radius:5px;padding:8px;display:grid;gap:4px;margin-bottom:7px;min-height:70px;overflow-wrap:anywhere}.management .mg-calendar-booking time{font-size:11px;font-weight:700}.management .mg-calendar-booking strong{font-size:12px}.management .mg-calendar-booking small{font-size:11px;color:#60675f}.management .mg-calendar-booking .mg-badge{font-size:9px;padding:4px}.management .mg-calendar-booking.mg-slot-cancelled,.management .mg-calendar-booking.mg-slot-no_show{background:#f3ece8;border-color:#a78676}.management .mg-stock-grid{padding:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,265px),1fr));gap:16px}.management .mg-stock-card{padding:20px;border:1px solid #e5e6df;border-radius:12px;display:grid;gap:12px;align-content:start}.management .mg-stock-card h3{font-size:19px}.management .mg-stock-card p strong{font-size:26px}.management .mg-stock-card small{color:#72766d}.management .mg-stock-card .mg-inline-actions{flex-wrap:wrap}.management .mg-stock-history{padding:0 22px}.management .mg-stock-history>div{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:16px 0;border-bottom:1px solid #eee}.management .mg-stock-history small{display:block;margin-top:5px;color:#70776c}.management .mg-stock-history strong{white-space:nowrap}.management .mg-schedule{min-width:0}.management .mg-schedule legend{font-weight:700;margin-bottom:10px}.management .mg-schedule-row{padding:14px 0;border-bottom:1px solid #e6e8e1;display:grid;grid-template-columns:145px 1fr;gap:12px;align-items:center}.management .mg-schedule-row.closed{color:#7b8078}.management .mg-day-check{display:flex!important;align-items:center;gap:9px!important}.management .mg-day-check input,.management .mg-associations input{width:18px!important;min-height:18px!important;height:18px;accent-color:#55715b}.management .mg-schedule-times{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.management .mg-schedule-times label{font-size:10px}.management .mg-schedule-times input{padding:8px;min-width:0;font-size:12px}.management .mg-associations{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.management .mg-associations label{display:flex;align-items:center;gap:8px;padding:10px;border:1px solid #e3e6dc;border-radius:8px;font-size:12px}.management .mg-schedule input:disabled{opacity:.45}.management .mg-sidebar nav{overflow-y:auto;min-height:0}.management .mg-sidebar{overflow-y:auto}.management .mg-sidebar-bottom{flex-shrink:0}
+@media(max-width:680px){.management .mg-schedule-row{grid-template-columns:1fr;gap:9px}.management .mg-schedule-times{grid-template-columns:repeat(2,minmax(0,1fr))}.management .mg-associations{grid-template-columns:1fr}.management .mg-calendar-scroll{margin:0}.management .mg-calendar.week{min-width:0;grid-template-columns:1fr;padding:10px;gap:12px;background:#f6f6f2}.management .mg-calendar.week .mg-calendar-weekday{display:none}.management .mg-calendar.week .mg-calendar-day{min-height:110px;border:1px solid #e3e7dc;border-radius:10px}.management .mg-calendar.week .mg-calendar-date b::after{content:' · toque para abrir o dia';font-weight:400;font-size:11px}.management .mg-calendar.week .mg-calendar-booking{grid-template-columns:45px 1fr;min-height:60px}.management .mg-calendar.month{grid-template-columns:repeat(7,minmax(115px,1fr));min-width:805px}.management .mg-calendar-controls{align-items:stretch}.management .mg-stock-grid{padding:12px}.management .mg-stock-history{padding:0 14px}.management .mg-stock-history>div{align-items:start}.management .mg-schedule-times input{min-height:44px}.management .mg-stock-card .mg-link{min-height:44px}.management .mg-calendar-controls .mg-tabs button{min-height:44px}}
+
+.management .mg-week-day-name{font-size:11px;font-weight:500}.management .mg-calendar-booking{background:var(--mg-soft);border-color:var(--mg-primary)}.management .mg-calendar-day.today{box-shadow:inset 0 3px var(--mg-primary)}
+
+/* Keep async form locks visually neutral. */
+.management .mg-operation-fields { border: 0; padding: 0; margin: 0; min-width: 0; }
+.management button:disabled { cursor: not-allowed; opacity: .6; }
