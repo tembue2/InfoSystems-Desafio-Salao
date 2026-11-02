@@ -1,0 +1,1 @@
+drop policy if exists audit_reception_operations on public.audit_events;

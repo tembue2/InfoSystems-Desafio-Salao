@@ -18,7 +18,7 @@ function day(s:string){return /^\d{4}-\d{2}-\d{2}$/.test(s)&&Number.isFinite(Dat
 export default async function History({searchParams}:{searchParams:Promise<Record<string,string|string[]|undefined>>}){
  const client=await createClient();
  let role: 'manager'|'reception';
- try{role=(await requireAccess(client)).role;}catch(e){const err=managementError(e);if(err.code==='unauthenticated')redirect('/gestao/entrar/');if(err.code==='forbidden')redirect('/gestao/');throw err;}
+ try{role=(await requireAccess(client,['manager'])).role;}catch(e){const err=managementError(e);if(err.code==='unauthenticated')redirect('/gestao/entrar/');if(err.code==='forbidden')redirect('/gestao/');throw err;}
  const params=await searchParams;const read=(key:string)=>typeof params[key]==='string'?params[key] as string:'';
  const availableEntities=role==='manager'?entities:{bookings:entities.bookings,payments:entities.payments};
  const entity=Object.hasOwn(availableEntities,read('entity'))?read('entity'):'';const action=Object.hasOwn(actions,read('action'))?read('action'):'';
