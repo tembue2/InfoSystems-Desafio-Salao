@@ -1,0 +1,1 @@
+create policy audit_reception_operations on public.audit_events for select to authenticated using ((select public.current_role()) = 'reception'::public.app_role and entity in ('bookings','payments'));

@@ -27,7 +27,7 @@ export async function loadWorkspace(client: ManagementClient): Promise<LiveData>
     manager ? read((a,b) => client.from('products').select('*').order('id').range(a,b)) : [],
     manager ? read((a,b) => client.from('stock_movements').select('*').order('id').range(a,b)) : [],
     manager ? read((a,b) => client.from('work_hours').select('*').order('id').range(a,b)) : [],
-    manager ? execute(() => client.from('audit_events').select('*').order('id', { ascending: false }).limit(50)) : [],
+    execute(() => (manager ? client.from('audit_events').select('*') : client.from('audit_events').select('*').in('entity', ['bookings', 'payments'])).order('id', { ascending: false }).limit(50)),
     manager ? read((a,b) => client.from('manual_income').select('*').order('id').range(a,b)) : [],
     manager ? execute(() => client.from('salon_settings').select('*').eq('id', true).single()) : null,
     manager ? read((a,b) => client.from('profiles').select('id,full_name').eq('role', 'professional').order('id').range(a,b)) : [],
