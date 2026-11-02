@@ -31,7 +31,7 @@ export function LiveBookingForm({ data, date, appointment, onSave, onClose }: { 
     if (busy || loading) return;
     if (!items.length || !slot || !slots.includes(slot) || !eligible.some(p => p.id === professionalId)) { E('Seleccione serviços, profissional e um horário disponível.'); return; }
     const form = new FormData(event.currentTarget);
-    onSave({ id: appointment?.id ?? uid(), customerId: appointment?.customerId ?? String(form.get('customer')), professionalId, date: maputoDay(slot), time: maputoTime(slot), items, status: appointment?.status ?? 'pending', notes: appointment?.notes ?? '' });
+    onSave({ id: appointment?.id ?? uid(), customerId: appointment?.customerId ?? String(form.get('customer')), professionalId, date: maputoDay(slot), time: maputoTime(slot), items, status: appointment?.status ?? 'confirmed', notes: appointment?.notes ?? '' });
   }}>
     <fieldset disabled={busy}>
     {appointment ? <p className="mg-help">{data.customers.find(c => c.id === appointment.customerId)?.name} · Reagendar preserva serviços, valores, pagamentos e estado.</p> : <><label>Cliente<select name="customer" required defaultValue=""><option value="" disabled>Seleccionar cliente</option>{data.customers.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}</select></label><p className="mg-help">Para uma nova cliente, crie primeiro a ficha em Clientes.</p></>}
@@ -41,7 +41,7 @@ export function LiveBookingForm({ data, date, appointment, onSave, onClose }: { 
     {serviceIds.length > 0 && !eligible.length && <p role="status" className="mg-help">Nenhum profissional activo realiza todos os serviços seleccionados.</p>}
     <div className="mg-form-grid"><label>Data<input type="date" required min={todayKey()} max={moveDate(todayKey(),60)} value={day} onChange={e => D(e.target.value)}/></label><label>Hora de início<select required disabled={loading || !slots.length} value={slot} onChange={e => T(e.target.value)}><option value="">{loading ? 'A consultar…' : 'Seleccionar horário'}</option>{slots.map(s => <option key={s} value={s}>{maputoTime(s)}</option>)}</select></label></div>
     {!loading && professionalId && !slots.length && !error && <p role="status" className="mg-help">Sem horários disponíveis neste dia. Experimente outra data.</p>}
-    <p className="mg-help">A disponibilidade é confirmada no servidor ao guardar.{!appointment && ' Uma única marcação reúne os serviços e fica a aguardar pagamento integral.'}</p>
+    <p className="mg-help">A disponibilidade é confirmada no servidor ao guardar.{!appointment && ' Uma única marcação reúne os serviços e fica confirmada ao guardar. O pagamento é registado separadamente.'}</p>
     {error && <p role="alert" className="mg-form-error">{error}</p>}
     <div className="mg-form-actions"><button type="button" className="mg-button secondary" onClick={onClose}>Cancelar</button><button className="mg-button" disabled={busy || loading || !slot}>{busy ? 'A guardar…' : appointment ? 'Guardar reagendamento' : 'Criar marcação'}</button></div>
     </fieldset>

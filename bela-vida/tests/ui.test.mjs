@@ -33,7 +33,7 @@ const empty = { source:'supabase',loadedAt:'2026-11-01T10:00:00Z',customers:[],a
 
 test('the integrated workspace renders real empty data without seeding demo customers',()=>{
  const html=renderToString(React.createElement(Management,{access:{id:'test',role:'manager',name:'Conta verificada'},initialData:empty}));
- assert.match(html,/Conta verificada/);assert.match(html,/Dados do salão/);assert.match(html,/Sem marcações/);assert.doesNotMatch(html,/Dados fictícios|Ana Mucavele|Frontend de demonstração/);
+ assert.match(html,/Conta verificada/);assert.match(html,/Gestão ligada ao sistema/);assert.match(html,/Sem marcações/);assert.doesNotMatch(html,/Dados fictícios|Ana Mucavele|Frontend de demonstração/);
 });
 test('reception rendering does not expose manager navigation or inventory',()=>{
  const html=renderToString(React.createElement(Management,{access:{id:'test',role:'reception',name:'Recepção'},initialData:empty}));
