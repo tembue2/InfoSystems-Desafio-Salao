@@ -1,0 +1,7 @@
+'use server';
+import type {SupabaseClient} from '@supabase/supabase-js';
+import {createClient} from '@/lib/supabase/server';
+export async function bookingCatalog(){const db=await createClient() as unknown as SupabaseClient;const {data,error}=await db.rpc('public_booking_catalog');if(error)return {ok:false as const,error:'Não foi possível carregar os serviços.'};return {ok:true as const,services:data.services as {id:string;name:string;price:number;minutes:number}[]};}
+export async function bookingSlots(services:string[],day:string){const db=await createClient() as unknown as SupabaseClient;const {data,error}=await db.rpc('public_booking_slots',{p_services:services,p_day:day});return error?{ok:false as const,error:'Não foi possível carregar os horários. Volte a tentar.'}:{ok:true as const,slots:data as {professional_id:string;professional_name:string;starts_at:string}[]};}
+export async function sendBookingRequest(input:{key:string;name:string;phone:string;notes:string;services:string[];professional:string;startsAt:string}){const db=await createClient() as unknown as SupabaseClient;const {data,error}=await db.rpc('submit_booking_request',{p_key:input.key,p_name:input.name,p_phone:input.phone,p_notes:input.notes,p_services:input.services,p_professional:input.professional,p_starts_at:input.startsAt});return error?{ok:false as const,error:error.message}:{ok:true as const,id:String(data)};}
+
