@@ -45,7 +45,7 @@ export default function Salon(){
  async function send(){
  if(sendLock.current||success)return;
  const picked=available.find(x=>x.professional_id+'|'+x.starts_at===time);
- const problem=!chosen.length?'Escolha pelo menos um serviço.':!date||!picked?'Escolha um horário disponível.':name.trim().length<2?'Indique o seu nome.':!/^\\+?[0-9]{9,14}$/.test(phone.replace(/[\\s()-]/g,''))?'Indique um telefone válido.':'';
+ const problem=!chosen.length?'Escolha pelo menos um serviço.':!date||!picked?'Escolha um horário disponível.':name.trim().length<2?'Indique o seu nome.':!/^\+?[0-9]{9,14}$/.test(phone.replace(/[\s()-]/g,''))?'Indique um telefone válido.':'';
  if(problem){setError(problem);return;}sendLock.current=true;setSending(true);setError('');
  try{requestKey.current??=crypto.randomUUID();const r=await sendBookingRequest({key:requestKey.current,name,phone,notes,services:selected,professional:picked!.professional_id,startsAt:picked!.starts_at});if(r.ok){setSuccess('Pedido recebido. Referência: '+r.id+'. A equipa irá analisar o pedido e contactá-la.');}else{setError(r.error);const fresh=await bookingSlots(selected,date);if(fresh.ok)setAvailable(fresh.slots);}}catch{setError('Não foi possível confirmar o envio. Volte a tentar; o mesmo pedido não será duplicado.');}finally{sendLock.current=false;setSending(false);}
  }
