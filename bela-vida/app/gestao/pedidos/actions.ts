@@ -9,6 +9,6 @@ export async function reviewRequest(form:FormData){
  const decision=form.get('decision');if(!['approve','reject'].includes(String(decision)))throw new Error('Decisão inválida.');
  const {error}=await (client as unknown as SupabaseClient).rpc('review_booking_request',{p_request:form.get('id'),p_approve:decision==='approve'});
  if(error)redirect('/gestao/pedidos/?error='+encodeURIComponent(error.message));
- revalidatePath('/gestao');revalidatePath('/gestao/pedidos');redirect('/gestao/pedidos/?done=1');
+ revalidatePath('/gestao');revalidatePath('/gestao/pedidos');redirect('/gestao/pedidos/?state='+(decision==='approve'?'approved':'rejected')+'&done='+(decision==='approve'?'approved':'rejected'));
 }
 
